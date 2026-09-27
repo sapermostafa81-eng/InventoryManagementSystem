@@ -1,0 +1,51 @@
+﻿@model InventoryManagementSystem.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1>Product Details</h1>
+
+<div>
+
+    <h3>@Model.Title</h3>
+
+    <p>
+        <strong>Price:</strong>
+        @Model.Price
+    </p>
+
+    <p>
+        <strong>Description:</strong>
+        @Model.Description
+    </p>
+
+    <p>
+        <strong>Quantity:</strong>
+        @Model.Quantity
+    </p>
+
+    <p>
+        <strong>Category:</strong>
+        @Model.Category?.Name
+    </p>
+
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <img src="@Model.ImagePath"
+             width="200"
+             alt="@Model.Title" />
+    }
+
+</div>
+
+<a asp-action="Edit"
+   asp-route-id="@Model.ProductId"
+   class="btn btn-warning">
+    Edit
+</a>
+
+<a asp-action="Index"
+   class="btn btn-secondary">
+    Back
+</a>

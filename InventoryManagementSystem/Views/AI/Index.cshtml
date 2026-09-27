@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "AI Inventory Assistant";
+}
+
+<div class="container">
+
+    <h1 class="mb-4">
+        🤖 AI Inventory Assistant
+    </h1>
+
+    <p class="text-muted">
+        Ask questions about your products, stock and categories.
+    </p>
+
+    <form asp-controller="AI"
+          asp-action="Ask"
+          method="post">
+
+        <div asp-validation-summary="All"
+             class="text-danger mb-3">
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Ask your question
+            </label>
+
+            <textarea name="question"
+                      class="form-control"
+                      rows="4"
+                      placeholder="Example: Which products are low in stock?">@ViewBag.Question</textarea>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Ask Gemini 🤖
+        </button>
+
+    </form>
+
+    @if (ViewBag.Answer != null)
+    {
+        <div class="card mt-4">
+
+            <div class="card-header">
+                <strong>Gemini AI Answer</strong>
+            </div>
+
+            <div class="card-body">
+
+                <p style="white-space: pre-line;">
+                    @ViewBag.Answer
+                </p>
+
+            </div>
+
+        </div>
+    }
+
+</div>

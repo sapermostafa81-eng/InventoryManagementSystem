@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="mb-4">
+    <h1 class="fw-bold">Inventory Dashboard</h1>
+    <p class="text-muted">
+        Welcome to your Inventory Management System
+    </p>
+</div>
+
+<div class="row g-4 mb-5">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+                <h6 class="text-muted">Total Products</h6>
+                <h2 class="fw-bold text-primary">
+                    @ViewBag.TotalProducts
+                </h2>
+                <a asp-controller="Product"
+                   asp-action="Index"
+                   class="btn btn-outline-primary btn-sm">
+                    View Products
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+                <h6 class="text-muted">Categories</h6>
+                <h2 class="fw-bold text-success">
+                    @ViewBag.TotalCategories
+                </h2>
+                <a asp-controller="Category"
+                   asp-action="Index"
+                   class="btn btn-outline-success btn-sm">
+                    View Categories
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+                <h6 class="text-muted">Low Stock</h6>
+                <h2 class="fw-bold text-danger">
+                    @ViewBag.LowStock
+                </h2>
+                <a asp-controller="Product"
+                   asp-action="Index"
+                   class="btn btn-outline-danger btn-sm">
+                    Check Stock
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+                <h6 class="text-muted">Total Stock Units</h6>
+                <h2 class="fw-bold text-info">
+                    @ViewBag.TotalQuantity
+                </h2>
+                <a asp-controller="Product"
+                   asp-action="Index"
+                   class="btn btn-outline-info btn-sm">
+                    View Inventory
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h3 class="fw-bold mb-4">Quick Actions</h3>
+
+<div class="row g-3">
+
+    <div class="col-md-4">
+        <a asp-controller="Product"
+           asp-action="Create"
+           class="btn btn-primary w-100 p-3">
+            + Add New Product
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a asp-controller="Category"
+           asp-action="Create"
+           class="btn btn-success w-100 p-3">
+            + Add New Category
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a asp-controller="AI"
+           asp-action="Index"
+           class="btn btn-dark w-100 p-3">
+            🤖 Open AI Assistant
+        </a>
+    </div>
+
+</div>

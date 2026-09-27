@@ -1,0 +1,5 @@
+**/secrets.json
+**/.vs/
+**/bin/
+**/obj/
+**/*.csproj.user
